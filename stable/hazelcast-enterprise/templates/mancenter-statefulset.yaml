@@ -124,10 +124,6 @@ spec:
             drop:
             - ALL
         {{- end }}
-      {{- if .Values.securityContext.enabled }}
-      securityContext:
-        fsGroup: {{ .Values.securityContext.fsGroup }}
-      {{- end }}
       serviceAccountName: {{ template "hazelcast.serviceAccountName" . }}
       volumes:
       - name: mancenter-storage
